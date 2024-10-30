@@ -1,0 +1,259 @@
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  /* Cores e transições */
+  :root {
+    --bg-color: black;
+    --primary-color: #f1c40f;
+    --hover-color: #f39c12;
+    --text-color: #483f4e;
+    --card-bg: #f3eaea;
+    --transition-speed: 0.5s;
+  }
+  
+  /* Corpo da página */
+  body {
+    background-color: var(--bg-color);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Estilos do vídeo de fundo */
+  video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  /* Efeito de desfoque no background */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    z-index: 1;
+    pointer-events: none;
+  }
+  
+  /* Estrutura principal */
+  main {
+    max-width: 400px;
+    margin-top: 100px;
+    margin-left: 100px; /* Alinha à direita */
+    position: relative;
+    z-index: 2;
+    background-color: #f3eaea;
+    border-radius: 20px;
+    padding: 30px 20px;
+    box-shadow: 11px 23px 45px -17px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 11px 23px 45px -17px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 11px 23px 45px -17px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Estilos de cabeçalho */
+  h1, .partida h2 {
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 50px;
+  }
+  
+  /* Botão de jogar */
+  .btn-jogar {
+    width: 200px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    transition-duration: var(--transition-speed);
+    margin-top: 50px;
+  }
+  
+  .btn-jogar:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .btn-jogar:active {
+    background-color: var(--primary-color);
+    opacity: 0.9;
+  }
+
+  .btn-jogar:disabled {
+    background-color: #7e7d7d;
+    cursor: not-allowed;
+  }
+  
+  /* Estilos para as seções de início e escolha */
+  .inicio {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 50px;
+  }
+  
+  .inicio.active {
+    display: flex;
+  }
+  
+  /* Estilo para cada imagem de escolha */
+  img {
+    width: 70px;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition-duration: var(--transition-speed);
+  }
+  
+  .inicio img:hover {
+    transform: scale(1.1);
+  }
+  
+  .opcoes {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  /* Opção ativa */
+  .opcao.active {
+    border: 5px solid rgba(241, 196, 15, 0.31);
+    background-color: rgba(241, 196, 15, 0.31);
+    border-radius: 50%;
+  }
+  
+  /* Área de partida */
+  .partida {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 25px;
+  }
+  
+  .partida.active {
+    display: flex;
+  }
+  
+  .partida span {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  
+  /* Painel */
+  .painel {
+    max-width: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .painel p {
+    font-weight: 500;
+  }
+  
+  /* Animações das imagens de jogador e PC */
+  #img-jogador, #img-pc {
+    animation: rotateComponent 0.6s ease-in-out infinite;
+  }
+  
+  /* Containers para jogador e PC */
+  .jogador-container {
+    transform: rotate(90deg) scaleX(-1);
+  }
+  
+  .pc-container {
+    transform: rotate(270deg);
+  }
+
+
+
+  .empate{
+    background-color: #bbbbbb;
+    color: black;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-transform: capitalize;
+
+  }
+
+
+  .pc-venceu{
+    background-color: #a81414;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-transform: capitalize;
+  }
+
+  .jogador-venceu{
+    background-color: #0c6d0c;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+
+    text-transform: capitalize;
+  }
+
+  .btn-reiniciar{
+    display: none;
+    width: 200px;
+    height: 50px;
+    background-color: #bbbbbb;
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    transition-duration: var(--transition-speed);
+  }
+
+  .btn-reiniciar:hover {
+    background-color: #7e7d7d;
+    color: white;
+  }
+
+  .btn-reiniciar:active {
+    background-color: #bbbbbb;
+    opacity: 0.9;
+  }
+  
+  /* Animações de rotação */
+  @keyframes rotateComponent {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-45deg);
+    }
+  }
+  
+  @keyframes rotateComponentInverse {
+    0% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+
+  

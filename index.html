@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jokenpo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <video src="img/video.mp4" autoplay loop muted></video>
+    <main>
+      <section class="inicio active">
+        <h1>Jokenpô</h1>
+        <div class="escolha">
+          <div class="opcoes">
+            <div class="opcao" id="pedra">
+              <img src="img/pedra.png" alt="Pedra" />
+            </div>
+            <div class="opcao" id="papel">
+              <img src="img/papel.png" alt="Papel" />
+            </div>
+            <div class="opcao" id="tesoura">
+              <img src="img/tesoura.png" alt="Tesoura" />
+            </div>
+          </div>
+          <button class="btn btn-jogar" disabled>Jogar</button>
+        </div>
+      </section>
+
+      <section class="partida">
+        <h2 id="title-result">Resultado</h2>
+        <div class="painel">
+          <div>
+            <p>Jogador</p>
+            <div class="jogador-container">
+            <img
+              id="img-jogador"
+              src="img/papel.png"
+              alt="escolha jogador"
+              id="jogador"
+            />
+          </div>
+          </div>
+          <span>X</span>
+          <div >
+            <p>Maquina</p>
+            <div class="pc-container">
+              <img id="img-pc" src="img/papel.png" alt="escolha jogador" id="pc" />
+
+            </div>
+          </div>
+        </div>
+        <span id="result" class="""></span>
+        <button class="btn btn-reiniciar">↻ Reiniciar</button>
+      </section>
+    </main>
+  </body>
+</html>
